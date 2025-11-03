@@ -34,10 +34,17 @@ const Login = () => {
         if(users[email]) {
             if(password !== users[email].password){
                 setError("Password Incorrect");
+                console.log("Password Incorrect");
             }
         }
-        else if(!users[email]) setError("User not found");
-        else setError("");
+        else if(!users[email]) {
+            setError("User not found");
+            console.log("User not found");
+        }
+        else {
+            setError("");
+            console.log(email, password)
+        };
     },3000)
   }
 
