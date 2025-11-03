@@ -27,9 +27,6 @@ const users = {
         }
         else if(!users[email.current?.value.trim()]) setError("User not found");
         else setError("");
-
-        console.log(email.current.value, password.current.value)
-
     },3000)
   }
 
