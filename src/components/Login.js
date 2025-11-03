@@ -42,6 +42,8 @@ const Login = () => {
           console.log("Password Incorrect");
         } else {
           setError("");
+          emailRef.current.value = "",
+          passwordRef.current.value = "",
           console.log(email, password);
         }
       }
