@@ -2,26 +2,26 @@ import React, { useRef, useState } from "react";
 
 const Login = () => {
 
-const users = [
-    {
-        id: 1,
-        name: "ABC",
-        email: "abc@gmail.com",
-        password: "12"
-    },
-    {
-        id: 2,
-        name: "DEF",
-        email: "def@gmail.com",
-        password: "1234"
-    },
-    {
-        id: 3,
-        name: "GHI",
-        email: "ghi@gmail.com",
-        password: "123456"
-    }
-]
+    const users = [
+        {
+            id: 1,
+            name: "ABC",
+            email: "abc@gmail.com",
+            password: "12"
+        },
+        {
+            id: 2,
+            name: "DEF",
+            email: "def@gmail.com",
+            password: "1234"
+        },
+        {
+            id: 3,
+            name: "GHI",
+            email: "ghi@gmail.com",
+            password: "123456"
+        }
+    ]
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
