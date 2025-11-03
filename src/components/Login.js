@@ -2,30 +2,41 @@ import React, { useRef, useState } from "react";
 
 const Login = () => {
 
-const users = {
-    "ram@gmail.com": {
-        password: "ramram"
+const users = [
+    {
+        id: 1,
+        name: "ABC",
+        email: "abc@gmail.com",
+        password: "12"
     },
-    "om@gmail.com": {
-        password: "om"
+    {
+        id: 2,
+        name: "DEF",
+        email: "def@gmail.com",
+        password: "1234"
     },
-    "karan@gmail.com": {
-        password: "uma"
+    {
+        id: 3,
+        name: "GHI",
+        email: "ghi@gmail.com",
+        password: "123456"
     }
-}
-  const email = useRef(null);
-  const password = useRef(null);
+]
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
 
   const [error, setError] = useState("");
   function onSubmit(){
-    if(!email.current || !password.current) return;
+    const email = emailRef.current?.value.trim();
+    const password = passwordRef.current?.value.trim();
+
     setTimeout(()=>{
-        if(users[email.current?.value.trim()]) {
-            if(password.current.value !== users[email.current?.value.trim()].password){
-                setError("Password Incorrect")
+        if(users[email]) {
+            if(password !== users[email].password){
+                setError("Password Incorrect");
             }
         }
-        else if(!users[email.current?.value.trim()]) setError("User not found");
+        else if(!users[email]) setError("User not found");
         else setError("");
     },3000)
   }
@@ -35,7 +46,7 @@ const users = {
       <label htmlFor="input-email">Email</label>
       <br/>
       <input
-        ref={email}
+        ref={emailRef}
         type="email"
         placeholder="email"
         id="input-email"
@@ -44,14 +55,13 @@ const users = {
       <label htmlFor="input-password">Password</label>
       <br/>
       <input
-        ref={password}
+        ref={passwordRef}
         type="text"
         placeholder="Password"
         id="input-password"
       />
       <br />
       <button onClick={onSubmit} id="submit-form-btn">Submit</button>
-
       <br/>
       {error === "User not found" && <h1 id="user-error">{error}</h1>}
       {error === "Password Incorrect" && <h1 id="password-error">{error}</h1>}
