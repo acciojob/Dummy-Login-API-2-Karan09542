@@ -52,12 +52,11 @@ const Login = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <label htmlFor="input-email">Email</label>
-      <br />
+      <label htmlFor="input-email">Email</label><br/>
       <input ref={emailRef} type="email" placeholder="email" id="input-email" />
       <br />
       <label htmlFor="input-password">Password</label>
-      <br />
+      <br/>
       <input
         ref={passwordRef}
         type="text"
@@ -69,8 +68,8 @@ const Login = () => {
         Submit
       </button>
       <br />
-      {error === "User not found" && <h1 id="user-error">{error}</h1>}
-      {error === "Password Incorrect" && <h1 id="password-error">{error}</h1>}
+      <h1 id="user-error">{error === "User not found" ? error: ""}</h1>
+      <h1 id="password-error">{error === "Password Incorrect" ? error: ""}</h1>
     </form>
   );
 };
