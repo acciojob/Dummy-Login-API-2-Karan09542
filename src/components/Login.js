@@ -65,7 +65,7 @@ const Login = () => {
         id="input-password"
       />
       <br />
-      <button onClick={onSubmit} id="submit-form-btn">
+      <button type="submit" id="submit-form-btn">
         Submit
       </button>
       <br />
